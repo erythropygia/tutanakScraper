@@ -1,11 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-# Selenium WebDriver'ı başlatma
+# Selenium WebDriver
 driver = webdriver.Chrome()
 
 def start_selenium():
-    # Web sayfasını açma
+    # Open website
     url = "https://tutanak.oyveotesi.org"
     driver.get(url)
 
@@ -32,5 +32,5 @@ def start_selenium():
     except:
         pass
 
-# Örnek kullanım
+# Start scraper
 start_selenium()
