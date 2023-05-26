@@ -19,10 +19,10 @@ def start_selenium():
             close_button = driver.find_element(By.CLASS_NAME, "v-btn__content")
 
             image = driver.find_element(By.XPATH, "//img[@alt='Tutanak']")
-            image_url = image.get_attribute("src")  # Resim URL'sini al
+            image_url = image.get_attribute("src")  # get image url
 
             if image_url not in downloaded_links:
-                response = requests.get(image_url)  # Resmi indir
+                response = requests.get(image_url)  # save image
                 with open("belge/" + str(uuid.uuid4()) + ".jpeg", "wb") as file:
                     file.write(response.content)  # Resmi dosyaya kaydet
                     downloaded_links.append(image_url)
