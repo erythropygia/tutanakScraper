@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-
-
 from PIL import Image
 from io import BytesIO
 
@@ -11,15 +9,12 @@ import requests
 import uuid
 import time
 
-# Selenium WebDriver'ı başlatma
-
 driver = webdriver.Chrome()
 driver.set_window_size(1024, 768)
 #driver.maximize_window()
 downloaded_links = []
 
 def start_selenium():
-    # Web sayfasını açma
     url = "https://tutanak.oyveotesi.org"
     driver.get(url)
 
@@ -27,9 +22,7 @@ def start_scraper():
     start_selenium()
     while True:
         try:
-            
             counter=0
-
             #Link-table
             tbody_element = driver.find_element(By.CLASS_NAME, 'v-data-table__tbody')
             tr_elements = tbody_element.find_elements(By.CLASS_NAME, 'v-data-table__tr')
